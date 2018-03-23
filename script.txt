@@ -1,0 +1,19 @@
+	ws= new  WebSocket("ws://192.168.51.88:4649/Chat?name=MinombreDeUsuario");
+	ws.onerror=function(e){
+		console.log("cliente conectado");
+		//conversation.appendChild(createSpan('Problemas con conecftion:'));
+	};
+	ws.onopen=function(){
+		console.log("cliente conectado");
+		//conversation.innerHTML="Cliente conectado <br/>";
+	};
+	ws.onclose=function(){
+		console.log("cliente desconectado");
+		//conversation.innerHTML="Cliente desconectado <br/>";
+	};
+	
+	ws.onmessage = function (event) {
+	console.log(event.data);
+	}
+	
+	ws.send("hola Pedro");
